@@ -44,7 +44,7 @@ A production-ready recipe search autocomplete component with keyboard navigation
 ### Quick Start
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/recipe-autocomplete.git
+git clone https://github.com/programmer-blog/react-recipe-autocomplete-search
 
 # Navigate to project
 cd recipe-autocomplete
