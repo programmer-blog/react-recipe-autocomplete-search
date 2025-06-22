@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# React Recipe Autocomplete Search
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Demo Animation](demo.gif) *(Replace with your actual demo GIF)*
 
-## Available Scripts
+A production-ready recipe search autocomplete component with keyboard navigation, responsive design, and intelligent API caching.
 
-In the project directory, you can run:
+## ✨ Features
 
-### `npm start`
+### Core Functionality
+- Real-time recipe search as you type
+- Keyboard navigation (↑/↓ arrows, Enter, Esc)
+- Mobile-responsive layout
+- Loading indicators during API calls
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Enhanced UX
+- Intelligent API debouncing (300ms)
+- Proper error handling
+- "No results" state display
+- Visual feedback for active selections
+- Recipe metadata display (cooking time)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Technical Features
+- React hooks (useState, useEffect, useRef)
+- CSS transitions and animations
+- Clean component architecture
+- ESLint-compliant code
+- PropTypes validation (recommended addition)
 
-### `npm test`
+## 🛠 Technologies
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Category        | Technologies Used |
+|----------------|------------------|
+| Core           | React 18, JavaScript ES6+ |
+| Styling        | CSS3, Flexbox, CSS Variables |
+| API            | Fetch API, DummyJSON Recipes |
+| Development    | Create React App, ESLint |
 
-### `npm run build`
+## 🚀 Installation & Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
+- Node.js (v14+ recommended)
+- npm (v7+ recommended)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Quick Start
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/recipe-autocomplete.git
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Navigate to project
+cd recipe-autocomplete
 
-### `npm run eject`
+# Install dependencies
+npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Start development server
+npm start
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The app will open at http://localhost:3000
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+📂 Project Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+recipe-autocomplete/
+├── src/
+│   ├── components/        # (Recommended for expansion)
+│   ├── App.js            # Main component
+│   ├── App.css           # Component styles
+│   ├── index.js          # App entry point
+│   └── index.css         # Global styles
+├── public/               # Static assets
+├── package.json          # Project manifest
+└── README.md            # Documentation
 
-## Learn More
+🔧 Configuration
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+const API_ENDPOINT = "https://dummyjson.com/recipes/search";
+const DEBOUNCE_TIME = 300; // milliseconds
+const RESULTS_LIMIT = 5; // Max results to show
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+🌐 API Usage
 
-### Code Splitting
+The component uses DummyJSON's free recipe API:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    Endpoint: GET https://dummyjson.com/recipes/search?q={query}&limit={limit}
 
-### Analyzing the Bundle Size
+    Returns: Array of recipe objects with:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    `{
+        "id": Number,
+        "name": String,
+        "cookTimeMinutes": Number,
+        // ...other recipe properties
+    }`
