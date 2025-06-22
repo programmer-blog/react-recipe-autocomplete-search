@@ -1,7 +1,5 @@
 # React Recipe Autocomplete Search
 
-![Demo Animation](demo.gif) *(Replace with your actual demo GIF)*
-
 A production-ready recipe search autocomplete component with keyboard navigation, responsive design, and intelligent API caching.
 
 ## ✨ Features
